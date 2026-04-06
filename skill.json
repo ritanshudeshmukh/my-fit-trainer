@@ -1,0 +1,83 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "My fit trainer app is a fitness tracking personal assistant powered by Alexa Skills.",
+          "examplePhrases": [
+            "Alexa, Open My Fit Trainer"
+          ],
+          "keywords": [
+            "Personal",
+            "trainer"
+          ],
+          "name": "My Fit trainer App",
+          "description": "The my fit trainer app allows users to track their workout time and calories burnt on a variety of exercises.",
+          "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "This is a simple workout start, stop, pause, resume app that calculates workout duration and calories burnt based on present data. \n1. Open my fit trainer app\n2. Start a new workout (amongst the workouts defined in slottype)\n3. Pause my workout\n4. resume my workout\n5. end my workout\n\n(Purpose of this skill: Project presentation for Introduction to Mobile Computing subject in my masters course)",
+      "category": "HEALTH_AND_FITNESS",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:627294578580:function:50b4e181-6260-4d31-a0b1-f7a6ff7efc69:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:627294578580:function:50b4e181-6260-4d31-a0b1-f7a6ff7efc69:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:627294578580:function:50b4e181-6260-4d31-a0b1-f7a6ff7efc69:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:627294578580:function:50b4e181-6260-4d31-a0b1-f7a6ff7efc69:Release_0"
+            }
+          }
+        },
+        "dialogManagement": {
+          "dialogManagers": [
+            {
+              "type": "AMAZON.Conversations"
+            }
+          ]
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::devices:all:address:full:read"
+      },
+      {
+        "name": "alexa::devices:all:geolocation:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://www.amazon.com/privacy"
+        }
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "my fit trainer",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "startIntent",
+          "slots": [
+            {
+              "name": "wk_type",
+              "type": "WorkoutType",
+              "samples": [
+                "{wk_type}"
+              ]
+            }
+          ],
+          "samples": [
+            "begin a new {wk_type} workout",
+            "begin a {wk_type} workout",
+            "begin {wk_type} workout",
+            "start a new {wk_type} workout",
+            "start a {wk_type} workout",
+            "start {wk_type} workout"
+          ]
+        },
+        {
+          "name": "endIntent",
+          "slots": [],
+          "samples": [
+            "end the workout",
+            "finish the workout",
+            "finish my workout",
+            "finish workout",
+            "end my workout",
+            "end workout"
+          ]
+        },
+        {
+          "name": "pauseIntent",
+          "slots": [],
+          "samples": [
+            "let\u0027s take a break",
+            "i want a break",
+            "i need a break",
+            "i need to take a break",
+            "pause the workout",
+            "pause my workout",
+            "pause workout"
+          ]
+        },
+        {
+          "name": "resumeIntent",
+          "slots": [],
+          "samples": [
+            "let\u0027s continue the workout",
+            "let\u0027s continue",
+            "resume my workout",
+            "resume the workout"
+          ]
+        },
+        {
+          "name": "restartIntent",
+          "slots": [],
+          "samples": [
+            "let\u0027s start again",
+            "let\u0027s take it from the top",
+            "reset this workout",
+            "reset the workout",
+            "restart the workout",
+            "restart my workout"
+          ]
+        },
+        {
+          "name": "AMAZON.SearchAction\u003cobject@WeatherForecast\u003e",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "step machine",
+                "synonyms": [
+                  "elliptical trainer"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "floor workout",
+                "synonyms": [
+                  "circuit workout",
+                  "circuit training",
+                  "indoor workout",
+                  "other workout"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "exercise bike",
+                "synonyms": [
+                  "cycling"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "tennis",
+                "synonyms": [
+                  "lawn tennis"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "jogging"
+              }
+            },
+            {
+              "name": {
+                "value": "skipping",
+                "synonyms": [
+                  "skipping rope",
+                  "rope skipping"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "weight machine",
+                "synonyms": [
+                  "weight lifting",
+                  "weight training"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "walking"
+              }
+            },
+            {
+              "name": {
+                "value": "running",
+                "synonyms": [
+                  "run"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "treadmill",
+                "synonyms": [
+                  "indoor running"
+                ]
+              }
+            }
+          ],
+          "name": "WorkoutType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "startIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "wk_type",
+              "type": "WorkoutType",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.1464657717712.1343750810305",
+                "elicitation": "Elicit.Slot.1195086293110.1264538010511"
+              }
+            }
+          ]
+        },
+        {
+          "name": "endIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.652651927395"
+          },
+          "slots": []
+        },
+        {
+          "name": "restartIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.55833449301"
+          },
+          "slots": []
+        },
+        {
+          "name": "pauseIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.803022491343"
+          },
+          "slots": []
+        },
+        {
+          "name": "resumeIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1600603098709"
+          },
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1195086293110.1264538010511",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What kind of workout are we doing today?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1464657717712.1343750810305",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{wk_type} workout. Did I get that right?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.652651927395",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "are you sure you want to end your workout?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.55833449301",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure you want to restart your current workout?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.803022491343",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "pause your workout, did i get that right?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1600603098709",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "resume your current workout, Did i get that right?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.251930737468",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Your last workout stats were better than your current. Try to push yourself a little harder, I know you can do it. I\u0027ll inist to continue the workout for some more time. Do you really want to end your workout?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "33"
+}
